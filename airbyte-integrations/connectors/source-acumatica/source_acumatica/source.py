@@ -24,7 +24,6 @@ from airbyte_cdk.sources.streams.http.auth.core import HttpAuthenticator
 
 
 class CookieAuthenticator(HttpAuthenticator):
-
     def __init__(self, config):
         self.cookie_jar = self.login(config["name"], config["password"], config["tenant"])
 
@@ -39,18 +38,17 @@ class CookieAuthenticator(HttpAuthenticator):
         return resp.cookies
 
     def get_auth_header(self) -> Mapping[str, Any]:
-        return {"Cookie": "; ".join([f"{k}={v}" for k,v in requests.utils.dict_from_cookiejar(self.cookie_jar).items()])}
-    
+        return {"Cookie": "; ".join([f"{k}={v}" for k, v in requests.utils.dict_from_cookiejar(self.cookie_jar).items()])}
+
 
 class AcumaticaStream(HttpStream, ABC):
-
     def __init__(self, config, authenticator, **kwargs):
         super(**kwargs).__init__(authenticator)
         self.tenant = config["tenant"]
 
     def get_url_base(self):
         return "https://{}.acumatica.com/entity/Default/22.200.001/".format(self.tenant)
-    
+
     @property
     def url_base(self):
         return self.get_url_base()
@@ -58,15 +56,14 @@ class AcumaticaStream(HttpStream, ABC):
     def next_page_token(self, response: requests.Response) -> Optional[Mapping[str, Any]]:
         # The API does not offer pagination, so we return None to indicate there are no more pages in the response
         return None
-    
+
     def request_params(
         self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, any] = None, next_page_token: Mapping[str, Any] = None
     ) -> MutableMapping[str, Any]:
         return {}
-    
+
 
 class IncrementalAcumaticaStream(AcumaticaStream, IncrementalMixin):
-
     def __init__(self, config, authenticator, start_date: datetime, **kwargs):
         super(**kwargs).__init__(config, authenticator)
         self.start_date = start_date
@@ -119,13 +116,10 @@ class Invoices(IncrementalAcumaticaStream):
     primary_key = "id"
 
     def path(
-        self, 
-        stream_state: Mapping[str, Any] = None, 
-        stream_slice: Mapping[str, Any] = None, 
-        next_page_token: Mapping[str, Any] = None
+        self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
     ) -> str:
         return "Invoice"
-    
+
     def request_params(
         self,
         stream_state: Mapping[str, Any],
@@ -144,6 +138,37 @@ class Invoices(IncrementalAcumaticaStream):
     ) -> Iterable[Mapping]:
         data = response.json()
         return data
+
+
+class Customers(IncrementalAcumaticaStream):
+
+    cursor_field = "LastModifiedDateTime"
+    primary_key = "id"
+
+    def path(
+        self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
+    ) -> str:
+        return "Customer"
+
+    def request_params(
+        self,
+        stream_state: Mapping[str, Any],
+        stream_slice: Mapping[str, Any] = None,
+        next_page_token: Mapping[str, Any] = None,
+    ) -> MutableMapping[str, Any]:
+        start_point = str(stream_slice[self.cursor_field])
+        return {"$filter": f"LastModifiedDateTime gt datetimeoffset'{start_point[:22]}'"}
+
+    def parse_response(
+        self,
+        response: requests.Response,
+        stream_state: Mapping[str, Any],
+        stream_slice: Mapping[str, Any] = None,
+        next_page_token: Mapping[str, Any] = None,
+    ) -> Iterable[Mapping]:
+        data = response.json()
+        return data
+
 
 # Source
 class SourceAcumatica(AbstractSource):
@@ -175,6 +200,9 @@ class SourceAcumatica(AbstractSource):
         """
         :param config: A Mapping of the user input configuration as defined in the connector spec.
         """
-        auth = CookieAuthenticator(config) 
-        start_date = config['start_date']
-        return [Invoices(config=config, authenticator=auth, start_date=start_date)]
+        auth = CookieAuthenticator(config)
+        start_date = config["start_date"]
+        return [
+            Invoices(config=config, authenticator=auth, start_date=start_date),
+            Customers(config=config, authenticator=auth, start_date=start_date),
+        ]

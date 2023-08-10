@@ -1,16 +1,779 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": ["null", "string"]
-    },
-    "name": {
-      "type": ["null", "string"]
-    },
-    "signup_date": {
-      "type": ["null", "string"],
-      "format": "date-time"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "id"
+    ],
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "rowNumber": {
+            "type": "integer"
+        },
+        "note": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "AccountRef": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ApplyOverdueCharges": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "AutoApplyPayments": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "BAccountID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "BillingAddressOverride": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "BillingContactOverride": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "CreatedDateTime": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time"
+                }
+            }
+        },
+        "CreditLimit": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "CurrencyID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "CurrencyRateType": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "CustomerClass": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "CustomerID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "CustomerName": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "EnableCurrencyOverride": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "EnableRateOverride": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "EnableWriteOffs": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "EntityUsageType": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "FOBPoint": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "LastModifiedDateTime": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time"
+                }
+            }
+        },
+        "LeadTimedays": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "LocationName": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "MultiCurrencyStatements": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "NoteID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "OrderPriority": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ParentRecord": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "PriceClassID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "PrintDunningLetters": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "PrintInvoices": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "PrintStatements": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ResidentialDelivery": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "RestrictVisibilityTo": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "SaturdayDelivery": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "SendDunningLettersbyEmail": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "SendInvoicesbyEmail": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "SendStatementsbyEmail": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShippingAddressOverride": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShippingBranch": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShippingContactOverride": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShippingRule": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShippingTerms": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShippingZoneID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "ShipVia": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "StatementCycleID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "StatementType": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "Status": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "TaxExemptionNumber": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "TaxRegistrationID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "TaxZone": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "Terms": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "WarehouseID": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "WriteOffLimit": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "custom": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "_links": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "self": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "files:put": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        }
     }
-  }
 }
