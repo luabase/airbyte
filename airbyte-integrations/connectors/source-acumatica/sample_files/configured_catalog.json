@@ -1,0 +1,228 @@
+{
+    "streams": [
+      {
+        "stream": {
+          "name": "invoices",
+          "json_schema": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "object"
+                  },
+                  "rowNumber": {
+                    "type": "object"
+                  },
+                  "note": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Amount": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "Balance": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "BillingPrinted": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "BillToContactOverride": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "CreatedDateTime": {
+                    "type": "object", 
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Customer": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "CustomerOrder": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Date": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Description": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "DueDate": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Hold": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "LastModifiedDateTime": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "LinkARAccount": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "LinkBranch": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "LocationID": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "PostPeriod": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "ReferenceNbr": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "ShipToContactOverride": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "Status": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "TaxTotal": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "Terms": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Type": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "custom": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "_links": {
+                    "type": "object",
+                    "properties": {
+                      "self": {
+                        "type": "string"
+                      },
+                      "files:put": {
+                        "type": "string"
+                      }
+                    }
+                  }
+            }
+          },
+          "supported_sync_modes": ["full_refresh", "incremental"]
+        },
+        "sync_mode": "incremental",
+        "destination_sync_mode": "overwrite"
+      }
+    ]
+  }
+  

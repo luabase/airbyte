@@ -1,0 +1,221 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["id"],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "rowNumber": {
+        "type": "integer"
+      },
+      "note": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "Amount": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["number", "null"]
+            }
+          }
+      },
+      "Balance": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["number", "null"]
+            }
+          }
+      },
+      "BillingPrinted": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["boolean", "null"]
+            }
+          }
+      },
+      "BillToContactOverride": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["boolean", "null"]
+            }
+          }
+      },
+      "CreatedDateTime": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"],
+              "format": "date-time"
+            }
+          }
+      },
+      "Customer": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "CustomerOrder": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "Date": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"],
+              "format": "date-time"
+            }
+          }
+      },
+      "Description": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "DueDate": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"],
+              "format": "date-time"
+            }
+          }
+      },
+      "Hold": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["boolean", "null"]
+            }
+          }
+      },
+      "LastModifiedDateTime": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"],
+              "format": "date-time"
+            }
+          }
+      },
+      "LinkARAccount": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "LinkBranch": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "LocationID": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "PostPeriod": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "ReferenceNbr": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "ShipToContactOverride": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["boolean", "null"]
+            }
+          }
+      },
+      "Status": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "TaxTotal": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["number", "null"]
+            }
+          }
+      },
+      "Terms": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "Type": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "custom": {
+        "type": ["object", "null"],
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+      },
+      "_links": {
+        "type": ["object", "null"],
+        "properties": {
+          "self": {
+            "type": ["string", "null"]
+          },
+          "files:put": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  }
+  

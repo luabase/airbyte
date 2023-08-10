@@ -1,0 +1,25 @@
+data:
+  allowedHosts:
+    hosts:
+      - TODO # Please change to the hostname of the source.
+  registries:
+    oss:
+      enabled: true
+    cloud:
+      enabled: false
+  connectorSubtype: api
+  connectorType: source
+  definitionId: 24ac51c4-df21-49f4-95fd-804bc6fadf77
+  dockerImageTag: 0.1.0
+  dockerRepository: airbyte/source-acumatica
+  githubIssueLabel: source-acumatica
+  icon: acumatica.svg
+  license: MIT
+  name: Acumatica
+  releaseDate: TODO
+  supportLevel: community
+  releaseStage: alpha
+  documentationUrl: https://docs.airbyte.com/integrations/sources/acumatica
+  tags:
+    - language:python
+metadataSpecVersion: "1.0"
