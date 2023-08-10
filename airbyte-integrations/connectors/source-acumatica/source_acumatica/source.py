@@ -170,6 +170,36 @@ class Customers(IncrementalAcumaticaStream):
         return data
 
 
+class SalesOrders(IncrementalAcumaticaStream):
+
+    cursor_field = "LastModifiedDateTime"
+    primary_key = "id"
+
+    def path(
+        self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
+    ) -> str:
+        return "SalesOrders"
+
+    def request_params(
+        self,
+        stream_state: Mapping[str, Any],
+        stream_slice: Mapping[str, Any] = None,
+        next_page_token: Mapping[str, Any] = None,
+    ) -> MutableMapping[str, Any]:
+        start_point = str(stream_slice[self.cursor_field])
+        return {"$filter": f"LastModifiedDateTime gt datetimeoffset'{start_point[:22]}'"}
+
+    def parse_response(
+        self,
+        response: requests.Response,
+        stream_state: Mapping[str, Any],
+        stream_slice: Mapping[str, Any] = None,
+        next_page_token: Mapping[str, Any] = None,
+    ) -> Iterable[Mapping]:
+        data = response.json()
+        return data
+
+
 # Source
 class SourceAcumatica(AbstractSource):
     def check_connection(self, logger, config) -> Tuple[bool, any]:
@@ -205,4 +235,5 @@ class SourceAcumatica(AbstractSource):
         return [
             Invoices(config=config, authenticator=auth, start_date=start_date),
             Customers(config=config, authenticator=auth, start_date=start_date),
+            SalesOrders(config=config, authenticator=auth, start_date=start_date),
         ]

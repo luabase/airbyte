@@ -227,791 +227,1455 @@
             "destination_sync_mode": "overwrite"
         },
         {
-          "stream": {
-              "name": "invoices",
-              "json_schema": {
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                        "type": "string"
-                    },
-                    "rowNumber": {
-                        "type": "integer"
-                    },
-                    "note": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+            "stream": {
+                "name": "invoices",
+                "json_schema": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "rowNumber": {
+                            "type": "integer"
+                        },
+                        "note": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "AccountRef": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "AccountRef": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ApplyOverdueCharges": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "ApplyOverdueCharges": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "AutoApplyPayments": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "AutoApplyPayments": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "BAccountID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "integer",
-                                    "null"
-                                ]
+                        },
+                        "BAccountID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "BillingAddressOverride": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "BillingAddressOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "BillingContactOverride": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "BillingContactOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "CreatedDateTime": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ],
-                                "format": "date-time"
+                        },
+                        "CreatedDateTime": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
                             }
-                        }
-                    },
-                    "CreditLimit": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "number",
-                                    "null"
-                                ]
+                        },
+                        "CreditLimit": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "CurrencyID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "CurrencyID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "CurrencyRateType": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "CurrencyRateType": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "CustomerClass": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "CustomerClass": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "CustomerID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "CustomerID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "CustomerName": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "CustomerName": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "EnableCurrencyOverride": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "EnableCurrencyOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "EnableRateOverride": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "EnableRateOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "EnableWriteOffs": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "EnableWriteOffs": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "EntityUsageType": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "EntityUsageType": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "FOBPoint": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "FOBPoint": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "LastModifiedDateTime": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ],
-                                "format": "date-time"
+                        },
+                        "LastModifiedDateTime": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
                             }
-                        }
-                    },
-                    "LeadTimedays": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "LeadTimedays": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "LocationName": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "LocationName": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "MultiCurrencyStatements": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "MultiCurrencyStatements": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "NoteID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "NoteID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "OrderPriority": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "integer",
-                                    "null"
-                                ]
+                        },
+                        "OrderPriority": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ParentRecord": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ParentRecord": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "PriceClassID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "PriceClassID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "PrintDunningLetters": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "PrintDunningLetters": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "PrintInvoices": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "PrintInvoices": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "PrintStatements": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "PrintStatements": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ResidentialDelivery": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "ResidentialDelivery": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "RestrictVisibilityTo": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "RestrictVisibilityTo": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "SaturdayDelivery": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "SaturdayDelivery": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "SendDunningLettersbyEmail": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "SendDunningLettersbyEmail": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "SendInvoicesbyEmail": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "SendInvoicesbyEmail": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "SendStatementsbyEmail": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ]
+                        },
+                        "SendStatementsbyEmail": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShippingAddressOverride": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShippingAddressOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShippingBranch": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShippingBranch": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShippingContactOverride": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShippingContactOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShippingRule": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShippingRule": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShippingTerms": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShippingTerms": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShippingZoneID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShippingZoneID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "ShipVia": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "ShipVia": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "StatementCycleID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "StatementCycleID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "StatementType": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "StatementType": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "Status": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "Status": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "TaxExemptionNumber": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "TaxExemptionNumber": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "TaxRegistrationID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "TaxRegistrationID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "TaxZone": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "TaxZone": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "Terms": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "Terms": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "WarehouseID": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "WarehouseID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "WriteOffLimit": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "number",
-                                    "null"
-                                ]
+                        },
+                        "WriteOffLimit": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "custom": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "custom": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "_links": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "self": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
-                            },
-                            "files:put": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
+                        },
+                        "_links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                },
+                                "files:put": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
                             }
                         }
                     }
-                }
-              },
-              "supported_sync_modes": [
-                  "full_refresh",
-                  "incremental"
-              ]
-          },
-          "sync_mode": "incremental",
-          "destination_sync_mode": "overwrite"
-      }
+                },
+                "supported_sync_modes": [
+                    "full_refresh",
+                    "incremental"
+                ]
+            },
+            "sync_mode": "incremental",
+            "destination_sync_mode": "overwrite"
+        },
+        {
+            "stream": {
+                "name": "invoices",
+                "json_schema": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "rowNumber": {
+                            "type": "integer"
+                        },
+                        "note": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "Approved": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "BaseCurrencyID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "BillToAddressOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "BillToAddressValidated": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "BillToContactOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CashAccount": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "ContactID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "ControlTotal": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CreatedDate": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
+                            }
+                        },
+                        "CreditHold": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CurrencyID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CurrencyRate": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CurrencyRateTypeID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CustomerID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "CustomerOrder": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "Date": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
+                            }
+                        },
+                        "Description": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "DestinationWarehouseID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "DisableAutomaticDiscountUpdate": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "EffectiveDate": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
+                            }
+                        },
+                        "ExternalRef": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "Hold": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "IsTaxValid": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "LastModified": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
+                            }
+                        },
+                        "LocationID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "NoteID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "OrderedQty": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "OrderNbr": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "OrderTotal": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "OrderType": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "PaymentMethod": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "PaymentRef": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "PreferredWarehouseID": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "ReciprocalRate": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "RequestedOn": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "date-time"
+                                }
+                            }
+                        },
+                        "ShipToAddressOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "ShipToAddressValidated": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "ShipToContactOverride": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "ShipVia": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "Status": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "TaxTotal": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "WillCall": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "custom": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "_links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                },
+                                "files:put": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "supported_sync_modes": [
+                    "full_refresh",
+                    "incremental"
+                ]
+            },
+            "sync_mode": "incremental",
+            "destination_sync_mode": "overwrite"
+        }
     ]
 }
