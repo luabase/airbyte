@@ -25,20 +25,28 @@ from airbyte_cdk.sources.streams.http.auth.core import HttpAuthenticator
 
 class CookieAuthenticator(HttpAuthenticator):
     def __init__(self, config):
-        self.cookie_jar = self.login(config["name"], config["password"], config["tenant"])
-
-    def login(self, name, password, tenant):
-        login_body = {
-            "name": name,
-            "password": password,
+        self.name = config["name"]
+        self.password = config["password"]
+        self.tenant = config["tenant"]
+        self.auth_body = {
+            "name": self.name,
+            "password": self.password
         }
-        login_url = "https://{}.acumatica.com/entity/auth/login/".format(tenant)
-        resp = requests.post(url=login_url, json=login_body)
+        self.cookie_jar = self.login()
+
+    def login(self):
+        login_url = "https://{}.acumatica.com/entity/auth/login/".format(self.tenant)
+        resp = requests.post(url=login_url, json=self.auth_body)
         resp.raise_for_status()
         return resp.cookies
 
     def get_auth_header(self) -> Mapping[str, Any]:
         return {"Cookie": "; ".join([f"{k}={v}" for k, v in requests.utils.dict_from_cookiejar(self.cookie_jar).items()])}
+    
+    def logout(self):
+        logout_url = "https://{}.acumatica.com/entity/auth/logout/".format(self.tenant)
+        resp = requests.post(url=logout_url, json = self.auth_body)
+        resp.raise_for_status()
 
 
 class AcumaticaStream(HttpStream, ABC):
@@ -127,7 +135,7 @@ class Invoices(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        return {"$filter": f"LastModifiedDateTime gt datetimeoffset'{start_point[:22]}'"}
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point[:22]}'"}
 
     def parse_response(
         self,
@@ -157,7 +165,7 @@ class Customers(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        return {"$filter": f"LastModifiedDateTime gt datetimeoffset'{start_point[:22]}'"}
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point[:22]}'"}
 
     def parse_response(
         self,
@@ -170,15 +178,15 @@ class Customers(IncrementalAcumaticaStream):
         return data
 
 
-class SalesOrders(IncrementalAcumaticaStream):
+class SalesOrder(IncrementalAcumaticaStream):
 
-    cursor_field = "LastModifiedDateTime"
+    cursor_field = "CreatedDate"
     primary_key = "id"
 
     def path(
         self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
     ) -> str:
-        return "SalesOrders"
+        return "SalesOrder"
 
     def request_params(
         self,
@@ -187,7 +195,7 @@ class SalesOrders(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        return {"$filter": f"LastModifiedDateTime gt datetimeoffset'{start_point[:22]}'"}
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point[:22]}'"}
 
     def parse_response(
         self,
@@ -235,5 +243,5 @@ class SourceAcumatica(AbstractSource):
         return [
             Invoices(config=config, authenticator=auth, start_date=start_date),
             Customers(config=config, authenticator=auth, start_date=start_date),
-            SalesOrders(config=config, authenticator=auth, start_date=start_date),
+            SalesOrder(config=config, authenticator=auth, start_date=start_date),
         ]
