@@ -490,6 +490,12 @@ class HttpStream(Stream, ABC):
         request_kwargs = self.request_kwargs(stream_state=stream_state, stream_slice=stream_slice, next_page_token=next_page_token)
 
         response = self._send_request(request, request_kwargs)
+
+        if getattr(self.authenticator, "logout", None):
+            # logout if the authenticator has a logout method
+            self.logger.info("Logging out of the API after fetching page")
+            self.authenticator.logout()
+            self.logger.info("Sucessfully logged out of the API after fetching page")
         return request, response
 
 
