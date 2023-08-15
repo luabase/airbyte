@@ -91,6 +91,165 @@
           }
         }
       },
+      "Details": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "rowNumber": {
+              "type": "integer"
+            },
+            "note": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "Account": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "Amount": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["number", "null"]
+                }
+              }
+            },
+            "Branch": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "CalculateDiscountsOnImport": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "DiscountAmount": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["number", "null"]
+                }
+              }
+            },
+            "ExtendedPrice": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["number", "null"]
+                }
+              }
+            },
+            "InventoryID": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "LastModifiedDateTime": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"],
+                  "format": "date-time"
+                }
+              }
+            },
+            "LineNbr": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["integer", "null"]
+                }
+              }
+            },
+            "Qty": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["number", "null"]
+                }
+              }
+            },
+            "Subaccount": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "TaxCategory": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "TransactionDescription": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "UnitPrice": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["number", "null"]
+                }
+              }
+            },
+            "UOM": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "customer": {
+              "type": ["object", "null"],
+              "properties": {
+                "value": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "_links": {
+              "type": "object",
+              "properties": {
+                "files:put": {
+                  "type": ["string", "null"]
+                  }
+                }
+            }
+          }
+        }
+      },
       "DueDate": {
         "type": ["object", "null"],
         "properties": {

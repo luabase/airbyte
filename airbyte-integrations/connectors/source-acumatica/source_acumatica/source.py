@@ -135,7 +135,8 @@ class Invoices(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point[:22]}'"}
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S")
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'", "$expand": "Details"}
 
     def parse_response(
         self,
@@ -165,7 +166,8 @@ class Customers(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point[:22]}'"}
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S")
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'"}
 
     def parse_response(
         self,
@@ -195,7 +197,8 @@ class SalesOrder(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point[:22]}'"}
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S")
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'"}
 
     def parse_response(
         self,
@@ -240,6 +243,7 @@ class SourceAcumatica(AbstractSource):
         """
         auth = CookieAuthenticator(config)
         start_date = config["start_date"]
+        # add shared cookie here
         return [
             Invoices(config=config, authenticator=auth, start_date=start_date),
             Customers(config=config, authenticator=auth, start_date=start_date),
