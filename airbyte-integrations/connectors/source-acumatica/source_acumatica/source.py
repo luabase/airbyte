@@ -167,7 +167,7 @@ class Customers(IncrementalAcumaticaStream):
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
         start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S.%f")
-        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'"}
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'", "$expand": "MainContact,MainContact/Address"}
 
     def parse_response(
         self,
@@ -274,10 +274,10 @@ class SourceAcumatica(AbstractSource):
         """
         auth = CookieAuthenticator(config)
         start_date = config["start_date"]
-        # add shared cookie here
         return [
             Invoices(config=config, authenticator=auth, start_date=start_date),
             Customers(config=config, authenticator=auth, start_date=start_date),
             SalesOrder(config=config, authenticator=auth, start_date=start_date),
             StockItem(config=config, authenticator=auth, start_date=start_date),
         ]
+        # add logout step here
