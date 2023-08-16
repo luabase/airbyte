@@ -135,7 +135,7 @@ class Invoices(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S")
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S.%f")
         return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'", "$expand": "Details"}
 
     def parse_response(
@@ -166,7 +166,7 @@ class Customers(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S")
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S.%f")
         return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'"}
 
     def parse_response(
@@ -197,8 +197,39 @@ class SalesOrder(IncrementalAcumaticaStream):
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
         start_point = str(stream_slice[self.cursor_field])
-        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S")
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S.%f")
         return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'"}
+
+    def parse_response(
+        self,
+        response: requests.Response,
+        stream_state: Mapping[str, Any],
+        stream_slice: Mapping[str, Any] = None,
+        next_page_token: Mapping[str, Any] = None,
+    ) -> Iterable[Mapping]:
+        data = response.json()
+        return data
+    
+
+class StockItem(IncrementalAcumaticaStream):
+
+    cursor_field = "LastModified"
+    primary_key = "id"
+
+    def path(
+        self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
+    ) -> str:
+        return "StockItem"
+
+    def request_params(
+        self,
+        stream_state: Mapping[str, Any],
+        stream_slice: Mapping[str, Any] = None,
+        next_page_token: Mapping[str, Any] = None,
+    ) -> MutableMapping[str, Any]:
+        start_point = str(stream_slice[self.cursor_field])
+        start_point = datetime.strftime(datetime.strptime(start_point, "%Y-%m-%dT%H:%M:%S.%f%z"), "%Y-%m-%dT%H:%M:%S.%f")
+        return {"$filter": f"{self.cursor_field} gt datetimeoffset'{start_point}'", "$expand": "Attributes"}
 
     def parse_response(
         self,
@@ -248,4 +279,5 @@ class SourceAcumatica(AbstractSource):
             Invoices(config=config, authenticator=auth, start_date=start_date),
             Customers(config=config, authenticator=auth, start_date=start_date),
             SalesOrder(config=config, authenticator=auth, start_date=start_date),
+            StockItem(config=config, authenticator=auth, start_date=start_date),
         ]

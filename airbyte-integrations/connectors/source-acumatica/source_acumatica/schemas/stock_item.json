@@ -1,0 +1,593 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["id"],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "rowNumber": {
+        "type": "integer"
+      },
+      "note": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ABCCode": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "AutoIncrementalValue": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "Availability": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "AverageCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "BaseUOM": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "COGSAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "COGSSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "Content": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "CountryOfOrigin": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "CurrentStdCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "CurySpecificMSRP": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "CurySpecificPrice": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "DefaultIssueLocationID": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "DefaultPrice": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "DefaultReceiptLocationID": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "DefaultWarehouseID": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "Description": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "DimensionVolume": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "DimensionWeight": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "DiscountAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "DiscountSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ImageUrl": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "InventoryAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "InventoryID": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "InventorySubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "IsAKit": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["boolean", "null"]
+          }
+        }
+      },
+      "ItemClass": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ItemStatus": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ItemType": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "LandedCostVarianceAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "LandedCostVarianceSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "LastCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "LastModified": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      },
+      "LastStdCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "LotSerialClass": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "Markup": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "MaxCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "MinCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "MinMarkup": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "MSRP": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "NotAvailable": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "NoteID": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PendingStdCost": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["number", "null"]
+          }
+        }
+      },
+      "POAccrualAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "POAccrualSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PostingClass": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PriceClass": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PriceManager": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PriceWorkgroup": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ProductManager": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ProductWorkgroup": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PurchasePriceVarianceAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PurchasePriceVarianceSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "PurchaseUOM": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ReasonCodeSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "SalesAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "SalesSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "SalesUOM": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "StandardCostRevaluationAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "StandardCostRevaluationSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "StandardCostVarianceAccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "StandardCostVarianceSubaccount": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "SubjectToCommission": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["boolean", "null"]
+          }
+        }
+      },
+      "TariffCode": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "TaxCategory": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "ValuationMethod": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "Visibility": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "VolumeUOM": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "WeightUOM": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "custom": {
+        "type": ["object", "null"],
+        "properties": {
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "_links": {
+        "type": ["object", "null"],
+        "properties": {
+          "self": {
+            "type": ["string", "null"]
+          },
+          "files:put": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+}
